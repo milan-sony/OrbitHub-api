@@ -1,0 +1,35 @@
+{
+  "name": "orbit-api",
+  "version": "1.0.0",
+  "description": "Your day, synced. Your life, organized.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "npm run test",
+    "start": "dotenvx run -- node server.js",
+    "dev": "dotenvx run -- nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/milan-sony/orbit.git"
+  },
+  "keywords": [
+    "tasks",
+    "notes",
+    "events",
+    "remainders"
+  ],
+  "author": "milan sony - ms",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/milan-sony/orbit/issues"
+  },
+  "homepage": "https://github.com/milan-sony/orbit#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.54.1",
+    "express": "^5.2.1"
+  }
+}
