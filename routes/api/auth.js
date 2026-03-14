@@ -1,5 +1,5 @@
 import express from "express";
-import { login, signup } from "../../controllers/authControllers.js";
+import { login, refresh, signup } from "../../controllers/authControllers.js";
 
 const authRoutes = express.Router();
 
@@ -8,5 +8,8 @@ authRoutes.post("/login", login);
 
 // Signup route
 authRoutes.post("/signup", signup);
+
+// Generate refresh token
+authRoutes.get("/refresh", refresh)
 
 export default authRoutes;
