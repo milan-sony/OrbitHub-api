@@ -8,7 +8,7 @@ const apiV1Router = express.Router();
 apiV1Router.get("/", (req, res) => {
     res.status(200).json({
         status: 200,
-        message: "Orbit API v1",
+        message: "OrbitHub API v1",
     });
 });
 
