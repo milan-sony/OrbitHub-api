@@ -61,8 +61,25 @@ export const createTasks = async (req, res) => {
 }
 
 export const getTasks = async (req, res) => {
-    return res.status(200).json({
-        status: 200,
-        message: "Get Tasks"
-    })
+
+    try {
+        const loggedInUserId = req.user?._id
+
+        const tasks = await Tasks.find({ user_id: loggedInUserId })
+
+        return res.status(200).json({
+            status: 200,
+            message: "Tasks fetch successfully",
+            data: tasks
+        })
+
+    } catch (error) {
+        console.error("Error fetching the tasks: ", error)
+        return res.status(500).json({
+            status: 500,
+            message: "Error fetching the tasks",
+            error: error.message
+        })
+
+    }
 }

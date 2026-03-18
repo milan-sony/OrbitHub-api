@@ -6,6 +6,6 @@ const taskRoutes = express.Router();
 
 // Create tasks
 taskRoutes.post("/setTasks", verifyToken, createTasks);
-taskRoutes.get("/getTasks", getTasks);
+taskRoutes.get("/getTasks", verifyToken, getTasks);
 
 export default taskRoutes;
