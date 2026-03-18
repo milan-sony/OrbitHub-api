@@ -127,6 +127,7 @@ export const login = async (req, res) => {
 
         const userData = {
             userId: user._id,
+            firstName: user.firstName
         }
 
         return res.status(200).json({
