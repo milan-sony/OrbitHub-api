@@ -1,6 +1,7 @@
 import express from "express";
 
 import authRoutes from "./auth.js";
+import taskRoutes from "./task.js";
 
 const apiV1Router = express.Router();
 
@@ -12,7 +13,10 @@ apiV1Router.get("/", (req, res) => {
     });
 });
 
-// auth routes
+// Auth routes
 apiV1Router.use("/auth", authRoutes);
+
+// Tasks routes
+apiV1Router.use("/tasks", taskRoutes);
 
 export default apiV1Router;
