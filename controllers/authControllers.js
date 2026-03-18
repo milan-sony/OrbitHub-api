@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 import bcrypt from "bcryptjs"
 
-import { users } from '../models/userModel.js'
+import { Users } from '../models/userModel.js'
 import { generateAccessToken, generateRefreshToken } from "../utils/generateTokens.js"
 
 // User signup
@@ -43,7 +43,7 @@ export const signup = async (req, res) => {
         }
 
         // Check if the user already exists or not
-        const existingUser = await users.findOne({ email: email })
+        const existingUser = await Users.findOne({ email: email })
 
         if (existingUser) {
             return res.status(400).json({
@@ -57,7 +57,7 @@ export const signup = async (req, res) => {
         const hashedPassword = bcrypt.hashSync(password, salt)
 
         // Creating the new user object
-        const newUser = new users({
+        const newUser = new Users({
             firstName: firstName,
             lastName: lastName,
             email: email,
@@ -104,7 +104,7 @@ export const login = async (req, res) => {
         const { email, password } = req.body
 
         // Check user exists
-        const user = await users.findOne({ email: email })
+        const user = await Users.findOne({ email: email })
 
         if (!user) {
             return res.status(400).json({
