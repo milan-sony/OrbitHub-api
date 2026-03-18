@@ -6,8 +6,6 @@ export const createTasks = async (req, res) => {
     try {
         const loggedInUserId = req.user?._id
 
-        console.log("loggedInUserId in taskController: ", loggedInUserId)
-
         const { task, priority, status } = req.body
 
         // Check empty input fields
