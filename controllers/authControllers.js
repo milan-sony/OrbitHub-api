@@ -174,8 +174,8 @@ export const refresh = (req, res) => {
     } catch (error) {
         console.error("Refresh token error:", error)
 
-        return res.status(403).json({
-            status: 403,
+        return res.status(500).json({
+            status: 500,
             message: 'Invalid or expired refresh token',
             error: error.message
         })
